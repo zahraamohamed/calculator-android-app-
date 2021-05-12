@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity"
+    app:layoutDescription="@xml/activity_main_scene">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_history"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/margin2x"
+            android:layout_marginStart="@dimen/margin2x"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/div"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/clear">
+
+            <TextView
+                android:id="@+id/txt_history"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin3x"
+                android:layout_marginStart="@dimen/margin2x"
+                android:gravity="start"
+                android:textAlignment="gravity"
+                android:textSize="@dimen/txt_size_btn"
+                app:layout_constraintBottom_toTopOf="@id/btn"
+                app:layout_constraintStart_toStartOf="parent"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/larg_margin"
+                android:background="@drawable/claer_shape"
+                android:padding="@dimen/margin1x"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:text="clear history"
+                android:textAllCaps="false"
+                android:textColor="@color/dark_pink"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/operation_txt_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:background="@color/bk"
+
+        android:paddingStart="@dimen/margin3x"
+        android:paddingEnd="@dimen/margin3x"
+        android:paddingBottom="@dimen/margin3x"
+        android:paddingTop="80dp"
+        android:layout_marginTop="@dimen/margin1x"
+        android:layout_marginEnd="@dimen/p_large"
+        android:layout_marginStart="@dimen/p_large"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/p_large"
+        android:layout_marginStart="@dimen/p_large"
+        android:background="@color/bk"
+
+        android:maxLength="8"
+        android:maxLines="1"
+        android:paddingStart="@dimen/margin3x"
+        android:paddingEnd="@dimen/margin3x"
+        android:paddingBottom="@dimen/margin3x"
+
+
+        android:textColor="@color/dark_pink"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/operation_txt_view"
+        tools:text="0" />
+
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintEnd_toEndOf="@+id/div"
+            app:layout_constraintStart_toStartOf="@+id/div"
+            app:layout_constraintTop_toTopOf="@id/history" />
+
+        <ImageView
+            android:id="@+id/line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:src="@drawable/line"
+            app:layout_constraintBottom_toTopOf="@+id/arc_start"
+            app:layout_constraintEnd_toEndOf="@id/div"
+            app:layout_constraintStart_toStartOf="@id/clear"
+            app:layout_constraintTop_toBottomOf="@id/delete" />
+
+
+        <!--    <view-->
+        <!--        android:id="@+id/line"-->
+        <!--        android:layout_width="0dp"-->
+        <!--        android:layout_height="1dp"-->
+        <!--        android:layout_marginTop="@dimen/margin2x"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="@id/clear"-->
+        <!--        app:layout_constraintTop_toBottomOf="@id/delete" />-->
+
+        <ImageView
+            android:id="@+id/rotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin3x"
+            android:src="@drawable/ic_maximize"
+
+            app:layout_constraintStart_toEndOf="@+id/ruler"
+            app:layout_constraintTop_toTopOf="@+id/delete" />
+
+        <ImageView
+            android:id="@+id/history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin2x"
+            android:src="@drawable/ic_clock"
+
+            app:layout_constraintBottom_toTopOf="@+id/line"
+            app:layout_constraintEnd_toEndOf="@+id/clear"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/ruler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin3x"
+            android:src="@drawable/ic_ruler"
+            app:layout_constraintStart_toEndOf="@+id/history"
+            app:layout_constraintTop_toTopOf="@+id/history" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/clear"
+            style="@style/btn_operation"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/margin2x"
+            android:layout_marginBottom="@dimen/margin2x"
+
+            android:text="c"
+            app:layout_constraintBottom_toTopOf="@+id/seven"
+            app:layout_constraintEnd_toStartOf="@+id/arc_start"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/arc_start"
+            style="@style/btn_operation"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="("
+            app:layout_constraintEnd_toStartOf="@+id/arc_end"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/clear"
+            app:layout_constraintTop_toTopOf="@id/clear" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/arc_end"
+            style="@style/btn_operation"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text=")"
+            app:layout_constraintEnd_toStartOf="@+id/div"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/arc_start"
+            app:layout_constraintTop_toTopOf="@id/clear" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/div"
+            style="@style/btn_operation"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="@dimen/margin2x"
+            android:text="/"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/arc_end"
+            app:layout_constraintTop_toTopOf="@id/clear" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/seven"
+            style="@style/btn_number"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="@dimen/margin2x"
+            android:text="7"
+
+            app:layout_constraintBottom_toTopOf="@+id/four"
+            app:layout_constraintEnd_toEndOf="@+id/clear"
+            app:layout_constraintStart_toStartOf="@+id/clear" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/eight"
+            style="@style/btn_number"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="8"
+            app:layout_constraintEnd_toEndOf="@+id/arc_start"
+            app:layout_constraintStart_toStartOf="@+id/arc_start"
+            app:layout_constraintTop_toTopOf="@+id/seven" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nine"
+            style="@style/btn_number"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+
+            android:text="9"
+            app:layout_constraintEnd_toEndOf="@+id/arc_end"
+            app:layout_constraintStart_toStartOf="@+id/arc_end"
+            app:layout_constraintTop_toTopOf="@+id/seven" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/multiply"
+            style="@style/btn_operation"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="*"
+            app:layout_constraintBottom_toTopOf="@+id/plus"
+            app:layout_constraintEnd_toEndOf="@+id/div"
+            app:layout_constraintStart_toStartOf="@+id/div"
+            app:layout_constraintTop_toBottomOf="@+id/clear" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/minus"
+            style="@style/btn_operation"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="-"
+            app:layout_constraintEnd_toEndOf="@+id/plus"
+            app:layout_constraintStart_toStartOf="@+id/plus"
+            app:layout_constraintTop_toTopOf="@+id/three" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/four"
+            style="@style/btn_number"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="@dimen/margin2x"
+            android:text="4"
+
+
+            app:layout_constraintBottom_toTopOf="@+id/one"
+            app:layout_constraintEnd_toEndOf="@+id/seven"
+            app:layout_constraintStart_toStartOf="@+id/seven" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/five"
+            style="@style/btn_number"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="5"
+
+
+            app:layout_constraintEnd_toEndOf="@+id/arc_start"
+            app:layout_constraintStart_toStartOf="@+id/arc_start"
+            app:layout_constraintTop_toTopOf="@+id/four" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/six"
+            style="@style/btn_number"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="6"
+
+            app:layout_constraintEnd_toEndOf="@+id/arc_end"
+            app:layout_constraintStart_toStartOf="@+id/arc_end"
+            app:layout_constraintTop_toTopOf="@+id/five" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/plus"
+            style="@style/btn_operation"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="+"
+
+            app:layout_constraintEnd_toEndOf="@+id/multiply"
+            app:layout_constraintStart_toStartOf="@+id/multiply"
+            app:layout_constraintTop_toTopOf="@+id/six" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/three"
+            style="@style/btn_number"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="3"
+
+            app:layout_constraintEnd_toEndOf="@+id/six"
+            app:layout_constraintStart_toStartOf="@+id/six"
+            app:layout_constraintTop_toTopOf="@+id/one" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/two"
+            style="@style/btn_number"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="2"
+
+            app:layout_constraintEnd_toEndOf="@+id/five"
+            app:layout_constraintStart_toStartOf="@+id/five"
+            app:layout_constraintTop_toTopOf="@+id/one" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/one"
+            style="@style/btn_number"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="@dimen/margin2x"
+            android:text="1"
+
+            app:layout_constraintBottom_toTopOf="@+id/zero"
+            app:layout_constraintEnd_toEndOf="@+id/four"
+            app:layout_constraintStart_toStartOf="@+id/four" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/zero"
+            style="@style/btn_number"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="@dimen/margin3x"
+
+            android:text="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/one"
+            app:layout_constraintStart_toStartOf="@+id/one" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dot"
+            style="@style/btn_number"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="."
+
+            app:layout_constraintEnd_toEndOf="@+id/two"
+            app:layout_constraintStart_toStartOf="@+id/two"
+            app:layout_constraintTop_toTopOf="@+id/zero" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/plus_minus"
+            style="@style/btn_number"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="+/-"
+            android:textColor="@color/dark_pink"
+
+            app:layout_constraintEnd_toEndOf="@+id/three"
+            app:layout_constraintStart_toStartOf="@+id/three"
+            app:layout_constraintTop_toTopOf="@+id/zero" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/equal"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:background="@drawable/btn_shape_number"
+            android:elevation="@dimen/margin2x"
+            android:text="="
+
+            android:textColor="@color/dark_pink"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/plus_minus"
+            app:layout_constraintEnd_toEndOf="@+id/minus"
+            app:layout_constraintStart_toStartOf="@+id/minus"
+            app:layout_constraintTop_toTopOf="@+id/zero" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding2x">16dp</dimen>
+    <dimen name="margin2x">16dp</dimen>
+    <dimen name="txt_size_btn">20sp</dimen>
+    <dimen name="margin1x">8dp</dimen>
+    <dimen name="margin3x">24dp</dimen>
+    <dimen name="larg_margin">30dp</dimen>
+    <dimen name="p_large">35dp</dimen>
+</resources>

@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/margin1x"
+    tools:context=".MainActivity"
+    android:background="@color/black"
+    >
+    <ImageView
+        android:id="@+id/history"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_clock"
+
+        android:layout_marginBottom="@dimen/margin1x"
+        app:layout_constraintBottom_toTopOf="@+id/mc"
+        app:layout_constraintEnd_toEndOf="@+id/mc"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/mini"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="@dimen/margin3x"
+        android:src="@drawable/ic_minimize"
+        app:layout_constraintEnd_toEndOf="@+id/mr"
+        app:layout_constraintStart_toEndOf="@+id/history"
+        app:layout_constraintTop_toTopOf="@+id/history" />
+
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_delete"
+        android:layout_marginBottom="@dimen/margin1x"
+
+        app:layout_constraintBottom_toTopOf="@+id/div"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/div" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/plus_minus"
+        style="@style/btn_number"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="+/-"
+        android:textColor="@color/dark_pink"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/three"
+        app:layout_constraintStart_toStartOf="@+id/three"
+        app:layout_constraintTop_toTopOf="@+id/zero" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/pi"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="π"
+        app:layout_constraintEnd_toEndOf="@+id/Log10"
+        app:layout_constraintStart_toStartOf="@+id/Log10"
+        app:layout_constraintTop_toTopOf="@+id/rad" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nd_two"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="2ND"
+        app:layout_constraintEnd_toEndOf="@+id/cosh"
+        app:layout_constraintStart_toStartOf="@+id/cosh"
+        app:layout_constraintTop_toTopOf="@+id/Factorial" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Factorial"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="x!"
+        app:layout_constraintEnd_toEndOf="@+id/tanh"
+        app:layout_constraintStart_toStartOf="@+id/tanh"
+        app:layout_constraintTop_toTopOf="@+id/pi" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cosh"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="COSH"
+        app:layout_constraintEnd_toEndOf="@+id/cos"
+        app:layout_constraintStart_toStartOf="@+id/cos"
+        app:layout_constraintTop_toTopOf="@+id/tanh" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sinh"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="SINH"
+
+        app:layout_constraintEnd_toEndOf="@+id/sin"
+        app:layout_constraintStart_toStartOf="@+id/sin"
+        app:layout_constraintTop_toTopOf="@+id/one" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tanh"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="TANH"
+        app:layout_constraintEnd_toEndOf="@+id/tan"
+        app:layout_constraintStart_toStartOf="@+id/tan"
+        app:layout_constraintTop_toTopOf="@+id/e" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/rad"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="RAD"
+        app:layout_constraintEnd_toEndOf="@+id/e"
+        app:layout_constraintStart_toStartOf="@+id/e"
+        app:layout_constraintTop_toTopOf="@+id/zero" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/acos"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="@string/cos_1"
+        app:layout_constraintEnd_toEndOf="@+id/mc"
+        app:layout_constraintStart_toStartOf="@+id/mc"
+        app:layout_constraintTop_toTopOf="@+id/x3" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/asin"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="@string/sin_1"
+        app:layout_constraintEnd_toEndOf="@+id/atan"
+        app:layout_constraintStart_toStartOf="@+id/atan"
+        app:layout_constraintTop_toTopOf="@+id/cosh" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/rand"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="rand"
+        app:layout_constraintEnd_toEndOf="@+id/atan"
+        app:layout_constraintStart_toStartOf="@+id/atan"
+        app:layout_constraintTop_toTopOf="@+id/Factorial" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/atan"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="@string/tan_1"
+        app:layout_constraintEnd_toEndOf="@+id/acos"
+        app:layout_constraintStart_toStartOf="@+id/acos"
+        app:layout_constraintTop_toTopOf="@+id/cos" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sin"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="SIN"
+        app:layout_constraintEnd_toEndOf="@+id/percent"
+        app:layout_constraintStart_toStartOf="@+id/percent"
+        app:layout_constraintTop_toTopOf="@+id/ln" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cos"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="COS"
+        app:layout_constraintEnd_toEndOf="@+id/x3"
+        app:layout_constraintStart_toStartOf="@+id/x3"
+        app:layout_constraintTop_toTopOf="@+id/tan" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tan"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="TAN"
+        app:layout_constraintEnd_toEndOf="@+id/m_plus"
+        app:layout_constraintStart_toStartOf="@+id/m_plus"
+        app:layout_constraintTop_toTopOf="@+id/four" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/e"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="E"
+        app:layout_constraintEnd_toEndOf="@+id/ln"
+        app:layout_constraintStart_toStartOf="@+id/ln"
+        app:layout_constraintTop_toTopOf="@+id/one" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ln"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="ln"
+        app:layout_constraintEnd_toEndOf="@+id/Log10"
+        app:layout_constraintStart_toStartOf="@+id/Log10"
+        app:layout_constraintTop_toTopOf="@+id/four" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Log10"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="log10"
+        app:layout_constraintEnd_toEndOf="@+id/ms"
+        app:layout_constraintStart_toStartOf="@+id/ms"
+        app:layout_constraintTop_toTopOf="@+id/seven" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/x2"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="x²"
+        app:layout_constraintEnd_toEndOf="@+id/m_plus"
+        app:layout_constraintStart_toStartOf="@+id/m_plus"
+        app:layout_constraintTop_toTopOf="@+id/percent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/x3"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="x³"
+
+        app:layout_constraintEnd_toEndOf="@+id/mr"
+        app:layout_constraintStart_toStartOf="@+id/mr"
+        app:layout_constraintTop_toTopOf="@+id/x2" />
+
+    <TextView
+        android:id="@+id/operation_txt_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:layout_marginStart="@dimen/margin1x"
+        android:layout_marginEnd="@dimen/margin1x"
+        android:paddingStart="@dimen/margin2x"
+        android:paddingTop="@dimen/margin1x"
+        android:paddingEnd="@dimen/margin2x"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|end"
+        android:maxLines="1"
+        android:layout_marginStart="@dimen/margin1x"
+        android:layout_marginEnd="@dimen/margin1x"
+        android:paddingStart="@dimen/margin2x"
+        android:paddingEnd="@dimen/margin2x"
+        android:paddingBottom="@dimen/margin1x"
+        android:textColor="@color/dark_pink"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/operation_txt_view"
+        tools:text="0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/clear"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="@dimen/margin1x"
+        android:layout_marginBottom="@dimen/margin1x"
+
+        android:text="c"
+        app:layout_constraintBottom_toTopOf="@+id/seven"
+        app:layout_constraintEnd_toStartOf="@+id/arc_start"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ms" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/mr"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="MR"
+        android:layout_marginEnd="@dimen/margin1x"
+
+        app:layout_constraintEnd_toStartOf="@+id/m_plus"
+        app:layout_constraintStart_toEndOf="@+id/mc"
+        app:layout_constraintTop_toTopOf="@+id/m_plus" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/mc"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="@dimen/margin1x"
+        android:text="MC"
+        app:layout_constraintEnd_toStartOf="@+id/mr"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mr" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ms"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="MS"
+        android:layout_marginEnd="@dimen/margin1x"
+
+        app:layout_constraintEnd_toStartOf="@+id/clear"
+        app:layout_constraintStart_toEndOf="@+id/m_minus"
+        app:layout_constraintTop_toTopOf="@+id/clear" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/m_plus"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="M+"
+        android:layout_marginEnd="@dimen/margin1x"
+
+        app:layout_constraintEnd_toStartOf="@+id/m_minus"
+        app:layout_constraintStart_toEndOf="@+id/mr"
+        app:layout_constraintTop_toTopOf="@+id/m_minus" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/m_minus"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="M-"
+        android:layout_marginEnd="@dimen/margin1x"
+
+        app:layout_constraintEnd_toStartOf="@+id/ms"
+        app:layout_constraintStart_toEndOf="@+id/m_plus"
+        app:layout_constraintTop_toTopOf="@+id/ms" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/arc_start"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="("
+        android:layout_marginEnd="@dimen/margin1x"
+
+        app:layout_constraintEnd_toStartOf="@+id/arc_end"
+        app:layout_constraintStart_toEndOf="@+id/clear"
+        app:layout_constraintTop_toTopOf="@+id/clear" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/arc_end"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text=")"
+
+        app:layout_constraintEnd_toStartOf="@+id/div"
+        app:layout_constraintStart_toEndOf="@+id/arc_start"
+        app:layout_constraintTop_toTopOf="@+id/arc_start" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/div"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:text="/"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/arc_end"
+        app:layout_constraintTop_toTopOf="@+id/arc_end" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sqrt"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="√"
+        app:layout_constraintEnd_toEndOf="@+id/sinh"
+        app:layout_constraintStart_toStartOf="@+id/sinh"
+        app:layout_constraintTop_toTopOf="@+id/pi" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/percent"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="%"
+        app:layout_constraintEnd_toEndOf="@+id/m_minus"
+        app:layout_constraintStart_toStartOf="@+id/m_minus"
+        app:layout_constraintTop_toTopOf="@+id/seven" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/seven"
+        style="@style/btn_number"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="7"
+        android:layout_marginBottom="@dimen/margin1x"
+
+        app:layout_constraintBottom_toTopOf="@+id/four"
+        app:layout_constraintEnd_toEndOf="@+id/clear"
+        app:layout_constraintStart_toStartOf="@+id/clear"
+        app:layout_constraintTop_toTopOf="@+id/multiply" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/eight"
+        style="@style/btn_number"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+
+        android:text="8"
+        app:layout_constraintEnd_toEndOf="@+id/arc_start"
+        app:layout_constraintStart_toStartOf="@+id/arc_start"
+        app:layout_constraintTop_toTopOf="@+id/seven" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nine"
+        style="@style/btn_number"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+
+        android:text="9"
+        app:layout_constraintEnd_toEndOf="@+id/arc_end"
+        app:layout_constraintStart_toStartOf="@+id/arc_end"
+        app:layout_constraintTop_toTopOf="@+id/seven" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/multiply"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="*"
+        android:layout_marginBottom="@dimen/margin1x"
+
+        app:layout_constraintBottom_toTopOf="@+id/minus"
+        app:layout_constraintEnd_toEndOf="@+id/div"
+        app:layout_constraintStart_toStartOf="@+id/div" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/minus"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="-"
+        app:layout_constraintEnd_toEndOf="@+id/multiply"
+        app:layout_constraintStart_toStartOf="@+id/multiply"
+        app:layout_constraintTop_toTopOf="@+id/six" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/four"
+        style="@style/btn_number"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="4"
+        android:layout_marginBottom="@dimen/margin1x"
+
+        app:layout_constraintBottom_toTopOf="@+id/one"
+        app:layout_constraintEnd_toEndOf="@+id/seven"
+        app:layout_constraintStart_toStartOf="@+id/seven" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/five"
+        style="@style/btn_number"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="5"
+        app:layout_constraintEnd_toEndOf="@+id/eight"
+        app:layout_constraintStart_toStartOf="@+id/eight"
+        app:layout_constraintTop_toTopOf="@+id/four" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/six"
+        style="@style/btn_number"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="6"
+        app:layout_constraintEnd_toEndOf="@+id/nine"
+        app:layout_constraintStart_toStartOf="@+id/nine"
+        app:layout_constraintTop_toTopOf="@+id/five" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/plus"
+        style="@style/btn_operation.R"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="@+id/minus"
+        app:layout_constraintStart_toStartOf="@+id/minus"
+        app:layout_constraintTop_toTopOf="@+id/three" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/three"
+        style="@style/btn_number"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="3"
+        app:layout_constraintEnd_toEndOf="@+id/six"
+        app:layout_constraintStart_toStartOf="@+id/six"
+        app:layout_constraintTop_toTopOf="@+id/one" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/two"
+        style="@style/btn_number"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="2"
+        app:layout_constraintEnd_toEndOf="@+id/five"
+        app:layout_constraintStart_toStartOf="@+id/five"
+        app:layout_constraintTop_toTopOf="@+id/one" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/one"
+        style="@style/btn_number"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="1"
+        android:layout_marginBottom="@dimen/margin1x"
+
+        app:layout_constraintBottom_toTopOf="@+id/zero"
+        app:layout_constraintEnd_toEndOf="@+id/four"
+        app:layout_constraintStart_toStartOf="@+id/four" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/zero"
+        style="@style/btn_number"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="0"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/one"
+        app:layout_constraintStart_toStartOf="@+id/one" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dot"
+        style="@style/btn_number"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:text="."
+        app:layout_constraintEnd_toEndOf="@+id/two"
+        app:layout_constraintStart_toStartOf="@+id/two"
+        app:layout_constraintTop_toTopOf="@+id/zero" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/equal"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_shape_number"
+        android:elevation="@dimen/margin2x"
+        android:text="="
+        android:textColor="@color/dark_pink"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/plus_minus"
+        app:layout_constraintEnd_toEndOf="@+id/plus"
+        app:layout_constraintStart_toStartOf="@+id/plus"
+        app:layout_constraintTop_toTopOf="@+id/plus_minus" />
+</androidx.constraintlayout.widget.ConstraintLayout>
