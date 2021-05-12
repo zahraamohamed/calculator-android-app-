@@ -7,4 +7,5 @@
     <dimen name="margin3x">24dp</dimen>
     <dimen name="larg_margin">30dp</dimen>
     <dimen name="p_large">35dp</dimen>
+    <dimen name="m_large">100dp</dimen>
 </resources>

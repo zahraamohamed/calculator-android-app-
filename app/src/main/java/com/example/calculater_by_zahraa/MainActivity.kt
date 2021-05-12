@@ -1,5 +1,6 @@
 package com.example.calculater_by_zahraa
 
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.graphics.drawable.Drawable
@@ -28,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         setClickNumber()
         setClickOperation()
         rotateScreen()
+        //open page of length
+        binding.ruler?.setOnClickListener {
+            val intent = Intent(this,length::class.java)
+            startActivity(intent) }
 
     }
     // set operation of number in txtview

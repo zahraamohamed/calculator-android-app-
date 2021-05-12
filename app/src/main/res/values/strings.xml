@@ -3,5 +3,7 @@
     <string name="cos_1">cos<sup>−1</sup></string>
     <string name="sin_1">sin<sup>−1</sup></string>
     <string name="tan_1">tan<sup>−1</sup></string>
+    <string name="clear_history">clear history</string>
+    <string name="c">c</string>
 
 </resources>
